@@ -18,6 +18,16 @@ El mayor desafío de esta fase inicial fue estructurar y limpiar bases de datos 
 * **Limpieza de Formatos Complejos:** Resolución de problemas de lectura en archivos Excel con encabezados múltiples, extrayendo dinámicamente años atrapados en las primeras filas de datos y ajustando dinámicamente los nombres de las columnas.
 * **Consolidación Relacional (Merge):** Integración exitosa de tres bases de datos de distinta naturaleza (clima, hidrología y economía) mediante `pd.merge()` (Inner Join) utilizando la fecha como llave principal, resultando en un único DataFrame (`df_final_valdivia`) estructurado y sin valores vacíos.
 
+  ## 📊 Fase 2: Visualización y Análisis de Tendencias
+
+El primer hito analítico del proyecto consiste en visualizar la tendencia histórica a largo plazo de la Cuenca de Valdivia (2008-2020). Específicamente, se explora la relación entre la disponibilidad hídrica natural y el impacto económico fijado por Aguas Décima utilizando Python y Pandas.
+
+📈 Gráfico de doble eje Y: Integración de la disponibilidad hídrica (Caudal promedio en m³/s) en el eje principal y el impacto económico (Tarifa en $/m³) en el eje secundario utilizando la librería Matplotlib.
+
+🧹 Limpieza en caliente: Estandarización final de encabezados de columnas y agrupación de series de tiempo por año calendario (.groupby) para aislar la macro-tendencia y mitigar el ruido estacional de los datos.
+
+💡 Insights Iniciales: En el gráfico realizado no se puede ver una relación directa entre el caudal y la tarifa media anual, aunque si se puede ver una ligera variación en los mismos periodos de tiempo entre los caudales más grandes y los cobros un poco más bajo en el consumo de agua, aunque el periodo de tiempo es demasiado limitado como para asegurar que tengan que ver uno con el otro.
+
 ## 🔜 Próximos Pasos (En desarrollo)
 * **Análisis Exploratorio de Datos (EDA):** Cálculo de la evolución anual base para las tres variables.
 * **Análisis de Tendencias:** Aplicación de medias móviles para suavizar la estacionalidad e identificar la macro-tendencia de la década.
