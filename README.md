@@ -18,15 +18,17 @@ El mayor desafío de esta fase inicial fue estructurar y limpiar bases de datos 
 * **Limpieza de Formatos Complejos:** Resolución de problemas de lectura en archivos Excel con encabezados múltiples, extrayendo dinámicamente años atrapados en las primeras filas de datos y ajustando dinámicamente los nombres de las columnas.
 * **Consolidación Relacional (Merge):** Integración exitosa de tres bases de datos de distinta naturaleza (clima, hidrología y economía) mediante `pd.merge()` (Inner Join) utilizando la fecha como llave principal, resultando en un único DataFrame (`df_final_valdivia`) estructurado y sin valores vacíos.
 
-  ## 📊 Fase 2: Visualización y Análisis de Tendencias
+ ## 📊 Fase 2: Visualización y Análisis de Tendencias
 
-El primer hito analítico del proyecto consiste en visualizar la tendencia histórica a largo plazo de la Cuenca de Valdivia (2008-2020). Específicamente, se explora la relación entre la disponibilidad hídrica natural y el impacto económico fijado por Aguas Décima utilizando Python y Pandas.
+El hito analítico de esta fase consiste en visualizar la tendencia histórica a largo plazo de la Cuenca de Valdivia (2008-2020), explorando la relación entre la disponibilidad hídrica natural y el impacto económico tarifario.
 
-📈 Gráfico de doble eje Y: Integración de la disponibilidad hídrica (Caudal promedio en m³/s) en el eje principal y el impacto económico (Tarifa en $/m³) en el eje secundario utilizando la librería Matplotlib.
+📈 Gráfico de doble eje Y: Integración de la disponibilidad hídrica (Caudal promedio en m³/s) en el eje principal y el impacto económico (Tarifa en $/m³) en el eje secundario, evitando distorsiones de escala.
 
-🧹 Limpieza en caliente: Estandarización final de encabezados de columnas y agrupación de series de tiempo por año calendario (.groupby) para aislar la macro-tendencia y mitigar el ruido estacional de los datos.
+🧹 Limpieza en caliente: Estandarización de encabezados de columnas y agrupación de series de tiempo por año calendario (.groupby) para aislar la macro-tendencia.
 
-💡 Insights Iniciales: En el gráfico realizado no se puede ver una relación directa entre el caudal y la tarifa media anual, aunque si se puede ver una ligera variación en los mismos periodos de tiempo entre los caudales más grandes y los cobros un poco más bajo en el consumo de agua, aunque el periodo de tiempo es demasiado limitado como para asegurar que tengan que ver uno con el otro.
+📉 Medias Móviles (Suavizado de Ruido): Implementación de la función .rolling(window=3) de Pandas para calcular medias móviles de 3 años, limpiando la estacionalidad interanual y revelando la verdadera dirección sostenida de la cuenca.
+
+💡 Insights Iniciales: En los gráficos realizados no se puede ver una relación directa entre el caudal y la tarifa media anual, aunque sí se puede ver una ligera variación en los mismos periodos de tiempo entre los caudales más grandes y los cobros un poco más bajos en el consumo de agua, aunque el periodo de tiempo es demasiado limitado como para asegurar que tengan que ver uno con el otro. También se ve una tendencia al alza de las tarifas anuales del servicio de agua. Aunque en el gráfico de Medias Móviles se identifica una baja muy brusca en el caudal durante el año 2009 y una alza igualmente brusca durante el 2013. 
 
 ## 🔜 Próximos Pasos (En desarrollo)
 * **Análisis Exploratorio de Datos (EDA):** Cálculo de la evolución anual base para las tres variables.
