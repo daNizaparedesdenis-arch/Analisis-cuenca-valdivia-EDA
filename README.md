@@ -28,11 +28,14 @@ El hito analítico de esta fase consiste en visualizar la tendencia histórica a
 
 📉 Medias Móviles (Suavizado de Ruido): Implementación de la función .rolling(window=3) de Pandas para calcular medias móviles de 3 años, limpiando la estacionalidad interanual y revelando la verdadera dirección sostenida de la cuenca.
 
-💡 Insights Iniciales: En los gráficos realizados no se puede ver una relación directa entre el caudal y la tarifa media anual, aunque sí se puede ver una ligera variación en los mismos periodos de tiempo entre los caudales más grandes y los cobros un poco más bajos en el consumo de agua, aunque el periodo de tiempo es demasiado limitado como para asegurar que tengan que ver uno con el otro. También se ve una tendencia al alza de las tarifas anuales del servicio de agua. Aunque en el gráfico de Medias Móviles se identifica una baja muy brusca en el caudal durante el año 2009 y una alza igualmente brusca durante el 2013. 
+📊 Elasticidad y Variación Porcentual: Cálculo de la variación acumulada tomando el año 2008 como base (0%). Se programó una búsqueda dinámica del último año disponible (.max()) para automatizar la extracción de resultados.
+
+💡 Insight Final (Fase 2): El análisis de elasticidad demuestra los siguientes valores: Para el año 2015, el caudal varió un -28.1% respecto al 2008.
+Para el año 2015, la tarifa aumentó un 26.5% respecto al 2008.
+
+💡 Insights Iniciales: En los gráficos realizados no se puede ver una relación directa entre el caudal y la tarifa media anual, aunque sí se puede ver una ligera variación en los mismos periodos de tiempo entre los caudales más grandes y los cobros un poco más bajos en el consumo de agua, aunque el periodo de tiempo es demasiado limitado como para asegurar que tengan que ver uno con el otro. También se ve una tendencia al alza de las tarifas anuales del servicio de agua. Aunque en el gráfico de Medias Móviles se identifica una baja muy brusca en el caudal durante el año 2009 y una alza igualmente brusca durante el 2013. Por último, el análisis de elasticidad demuestra los siguientes valores: para el año 2015 el caudal varió un -28.1% respecto al 2008 y para el año 2015 la tarifa aumentó un 26.5% respecto al 2008; aunque en el gráfico se puede ver que la tarifa anual no parece tener correlacion con el caudal, ya que sube de una manera constante, mientras que el caudal no posee valores lineales, si no que los datos resultan bastantes aleatorios.
 
 ## 🔜 Próximos Pasos (En desarrollo)
-* **Análisis Exploratorio de Datos (EDA):** Cálculo de la evolución anual base para las tres variables.
-* **Análisis de Tendencias:** Aplicación de medias móviles para suavizar la estacionalidad e identificar la macro-tendencia de la década.
 * **Visualización de Datos:** Creación de gráficos de series de tiempo interactivos o estáticos utilizando Matplotlib/Seaborn.
 
 ---
